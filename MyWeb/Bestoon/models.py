@@ -21,3 +21,17 @@ class Expense(models.Model):
 
     def __str__(self):
         return f"تومان{self.Amount}  - {self.Date}"
+
+
+class Income(models.Model):
+    Text = models.CharField(max_length=255,
+                            verbose_name="توضیحات")
+    Amount = models.BigIntegerField(verbose_name="درآمد")
+    Date = models.DateTimeField(verbose_name="تاریخ")
+    User = models.ForeignKey(User,
+                             on_delete=models.CASCADE,
+                             related_name=None,
+                             verbose_name="کاربر")
+
+    def __str__(self):
+        return self.Text
