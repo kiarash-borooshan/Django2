@@ -18,6 +18,7 @@ class Expense(models.Model):
                               choices=Choice,
                               default="lunch",
                               verbose_name="انتخاب کنید")
+    object = models.Manager()
 
     def __str__(self):
         return f"تومان{self.Amount}  - {self.Date}"
@@ -35,3 +36,14 @@ class Income(models.Model):
 
     def __str__(self):
         return self.Text
+
+
+class Token(models.Model):
+    User = models.OneToOneField(User,
+                                on_delete=models.CASCADE,
+                                verbose_name="کاربر")
+    Token = models.CharField(max_length=48,
+                             verbose_name="توکن")
+
+    def __str__(self):
+        return f"{self.User} _Token"
