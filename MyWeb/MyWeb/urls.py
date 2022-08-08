@@ -20,6 +20,7 @@ from django.urls import path
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("welcome/", views.welc, name="welcome"),
-    path("submit/expense/", views.submit_expense)
+    path("submit/expense/", views.submit_expense),
     # path("welcome/", include("Bestoon.url"))
+    path("register/", views.register, name="register")
 ]

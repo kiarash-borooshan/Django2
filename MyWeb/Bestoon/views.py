@@ -19,11 +19,16 @@ def submit_expense(request):
 
     # TODO: Validate data, user might be fake, amount might be fake
 
-    # this_token = request.POST["Token"]
-    # this_user = User.objects.filter(token__token=this_token).get()
+    # this_token = request.POST.get("token", "1234567")
+    # this_token = 1234567
+    # this_user = User.objects.filter(User, token__token=this_token).get()
     # now = datetime.datetime.now()
     # Expense.objects.create(User=this_user, Amount=request.POST['Amount'],
     #                        Text=request.POST["text"], Date=now)
+
+    # print(this_token)
+    # print(this_user)
+    print("NEXT")
 
     return JsonResponse({
         "status": "ok"
