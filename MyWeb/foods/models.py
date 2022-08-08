@@ -7,7 +7,8 @@ class food(models.Model):
                             verbose_name="نام غذا")
     Description = models.CharField(max_length=50,
                                    verbose_name="توضیحات")
-    Rate = models.IntegerField(verbose_name="امتیاز")
+    Rate = models.IntegerField(verbose_name="امتیاز",
+                               default="0")
     Price = models.BigIntegerField(verbose_name="قیمت")
     Time = models.IntegerField(verbose_name="زمان لازم")
     Pub_date = models.DateTimeField(auto_now=False,
@@ -15,3 +16,4 @@ class food(models.Model):
                                     verbose_name="تاریخ")
     Photo = models.ImageField(upload_to="foods/image/",
                               verbose_name="تصویر")
+    objects = models.Manager()
