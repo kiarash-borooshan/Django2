@@ -10,7 +10,7 @@
 <ul>
      {% for food in foods %}
      <li>
-     {{food.Name}} - {{food.Price}}
+         <a href="{% url 'detail' food.id %}"> {{food.Name}} - {{food.Price}} </a>
      </li>
      {% endfor %}
 

@@ -24,5 +24,6 @@ urlpatterns = [
     path("submit/expense/", BestoonView.submit_expense),
     # path("welcome/", include("Bestoon.url"))
     path("foods/", FoodView.food_welc),
-    path("food list", FoodView.food_list),
+    path("food list/", FoodView.food_list),
+    path("food list/<int:food_id>/", FoodView.food_details, name="detail")
 ]
