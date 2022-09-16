@@ -2,6 +2,7 @@ from django.db import models
 
 # Create your models here.
 
+
 class food(models.Model):
     Name = models.CharField(max_length=100,
                             verbose_name="نام غذا")
@@ -17,3 +18,4 @@ class food(models.Model):
     Photo = models.ImageField(upload_to="foods/image/",
                               verbose_name="تصویر")
     objects = models.Manager()
+

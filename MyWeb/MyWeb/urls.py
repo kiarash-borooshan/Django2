@@ -15,6 +15,7 @@ Including another URLconf
 """
 from Bestoon import views as BestoonView
 from foods import views as FoodView
+
 from django.contrib import admin
 from django.urls import path
 
@@ -25,5 +26,6 @@ urlpatterns = [
     # path("welcome/", include("Bestoon.url"))
     path("foods/", FoodView.food_welc),
     path("food list/", FoodView.food_list),
-    path("food list/<int:food_id>/", FoodView.food_details, name="detail")
+    path("food list/<int:food_id>/", FoodView.food_details, name="detail"),
+    path("food article/", FoodView.food_article, name="food_article")
 ]
