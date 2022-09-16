@@ -19,3 +19,5 @@ class food(models.Model):
                               verbose_name="تصویر")
     objects = models.Manager()
 
+    def __str__(self):
+        return self.Name
